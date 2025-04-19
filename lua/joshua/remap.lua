@@ -50,7 +50,6 @@ vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Left>", ":vertical resize +2<CR>")
 
-
 -- Error Handling
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostics for line" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
