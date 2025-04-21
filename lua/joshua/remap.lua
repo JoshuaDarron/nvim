@@ -54,3 +54,13 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize +2<CR>")
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostics for line" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+vim.keymap.set("n", "<leader>ec", function()
+	local diag = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 })[1]
+	if diag then
+		vim.fn.setreg("+", diag.message)
+		print("Copied error to clipboard 📋")
+	else
+		print("No error on this line 😎")
+	end
+end, { desc = "Copy diagnostic message to clipboard" })
+
