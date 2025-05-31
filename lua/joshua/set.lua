@@ -1,3 +1,13 @@
+vim.opt.sessionoptions = {
+	"buffers",      -- open buffers
+	"curdir",       -- current dir
+	"tabpages",     -- tabs
+	"winsize",      -- window size
+	"help",         -- help windows
+	"globals",      -- global vars
+	"localoptions", -- local settings (folds etc.)
+}
+
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
@@ -39,8 +49,5 @@ vim.g.loaded_netrwPlugin = 1
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
-
--- Session options
-vim.opt.sessionoptions:append("localoptions")
 
 require("nvim-tree").setup()
