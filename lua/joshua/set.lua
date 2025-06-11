@@ -50,4 +50,9 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  filters = {
+    dotfiles = false,         -- Show dotfiles (e.g. .git, .env)
+    git_ignored = false       -- Show files ignored by git
+  }
+})
